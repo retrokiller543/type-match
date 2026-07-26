@@ -4,12 +4,32 @@ members = [
 ]
 resolver = "3"
 
-[package]
-name = "type-match"
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.88"
+authors = ["Emil Schütt <emil.schutt@gmail.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/retrokiller543/type-match"
+homepage = "https://github.com/retrokiller543/type-match"
+
+[package]
+name = "type-match"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
 description = "Pattern matching for Rust trait objects"
 readme = "README.md"
+keywords = ["trait-object", "downcasting", "pattern-matching", "proc-macro"]
+categories = ["rust-patterns", "development-tools"]
+exclude = [".github/", ".idea/"]
 
 [dependencies]
-type-match-macros = { path = "crates/type-match-macros" }
+type-match-macros = { version = "=0.1.0", path = "crates/type-match-macros" }
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--cfg", "docsrs"]

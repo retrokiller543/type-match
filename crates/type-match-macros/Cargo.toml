@@ -1,7 +1,16 @@
 [package]
 name = "type-match-macros"
-version = "0.1.0"
-edition = "2024"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license-file = "../../LICENSE"
+repository.workspace = true
+homepage.workspace = true
+description = "Procedural macro implementation for type-match"
+readme = "README.md"
+keywords = ["trait-object", "downcasting", "pattern-matching", "proc-macro"]
+categories = ["rust-patterns", "development-tools"]
 
 [lib]
 proc-macro = true
@@ -11,3 +20,6 @@ proc-macro-crate = "3"
 proc-macro2 = "1"
 quote = "1"
 syn = { version = "2", features = ["full", "parsing"] }
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--cfg", "docsrs"]

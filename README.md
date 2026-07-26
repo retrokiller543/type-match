@@ -262,6 +262,26 @@ text as Text => text.0.len(),
 
 The binding has type `&T`, where `T` is the matched concrete type.
 
+### Trait-object reference types
+
+Reference types such as `&dyn Bird` are valid `Any` targets because the
+reference itself is sized:
+
+```ignore
+bird as &dyn Bird => bird.fly(),
+&dyn Bird => "stored bird reference",
+```
+
+These arms match when the concrete value stored behind the input trait object
+is itself an `&dyn Bird`. The bound form yields `&&dyn Bird`, which method-call
+autoderef usually makes transparent. This is matching a stored trait-object
+reference, not generic cross-casting: a concrete `Parrot` erased directly as
+`&dyn Animal` still has concrete type `Parrot`, not `&dyn Bird`.
+
+The `&dyn Trait` reference must satisfy `Any`, which normally means its borrow
+is `'static`. An unsized bare `dyn Trait` cannot be passed to `Any::is` or
+`Any::downcast_ref`.
+
 ### Struct patterns
 
 Struct patterns perform the downcast and structural match in one generated
