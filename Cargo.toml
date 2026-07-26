@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    'crates/*'
+]
+resolver = "3"
+
+[package]
+name = "type-match"
+version = "0.1.0"
+edition = "2024"
+description = "Pattern matching for Rust trait objects"
+readme = "README.md"
+
+[dependencies]
+type-match-macros = { path = "crates/type-match-macros" }
