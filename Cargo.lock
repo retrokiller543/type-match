@@ -131,14 +131,14 @@ dependencies = [
 
 [[package]]
 name = "type-match"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "type-match-macros",
 ]
 
 [[package]]
 name = "type-match-macros"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
