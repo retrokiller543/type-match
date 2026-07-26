@@ -5,7 +5,7 @@ members = [
 resolver = "3"
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.88"
 authors = ["Emil Schütt <emil.schutt@gmail.com>"]
@@ -29,7 +29,7 @@ categories = ["rust-patterns", "development-tools"]
 exclude = [".github/", ".idea/"]
 
 [dependencies]
-type-match-macros = { version = "=0.1.0", path = "crates/type-match-macros" }
+type-match-macros = { version = "=0.1.1", path = "crates/type-match-macros" }
 
 [package.metadata.docs.rs]
 rustdoc-args = ["--cfg", "docsrs"]
