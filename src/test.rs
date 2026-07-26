@@ -9,11 +9,6 @@ trait Animal {
     fn speak(&self) -> String;
 }
 
-#[downcastable]
-trait Bird: Animal {
-    fn fly(&self) -> &'static str;
-}
-
 enum Size {
     Small,
     Medium,
@@ -63,12 +58,6 @@ struct Parrot(Size);
 impl Animal for Parrot {
     fn speak(&self) -> String {
         "squawk".to_string()
-    }
-}
-
-impl Bird for Parrot {
-    fn fly(&self) -> &'static str {
-        "flap flap"
     }
 }
 
